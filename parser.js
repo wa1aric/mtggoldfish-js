@@ -2,12 +2,12 @@ module.exports = {
     sets: (html) => {
         html = html.replace(/[\r\n\t]/g, '')
         return new Promise((resolve, reject) => {
-            let editionRegEx = /<img alt="(.*?)" class="sprite-set_symbols_(.*?)" src=".*?" \/>/g
+            let editionRegEx = /<img alt=".*?" class="sprite-set_symbols_(.*?)".*?>(.*?)<\/a>/g
             let editionMatch, editions = []
             while (editionMatch = editionRegEx.exec(html)) {
                 editions.push({
-                    name: editionMatch[1],
-                    code: editionMatch[2]
+                    name: editionMatch[2],
+                    code: editionMatch[1]
                 })
             }
             resolve(editions)

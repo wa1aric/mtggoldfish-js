@@ -50,4 +50,5 @@ Output is an array of card objects. Each object contains `name` (String) and `pr
 
 Version | Notes
 -|-
+0.0.3 | Parser improvements
 0.0.1 | Initial release
