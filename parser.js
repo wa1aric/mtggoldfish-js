@@ -13,15 +13,16 @@ module.exports = {
             resolve(editions)
         })
     },
-    cards: (html) => {
+    cards: (html, paper) => {
         html = html.replace(/[\r\n\t]/g, '')
         return new Promise((resolve, reject) => {
+            let cards = []
             let trRegEx = /<tr>(.*?)<\/tr>/g
-            let trMatch, cards = []
+            let trMatch
             while (trMatch = trRegEx.exec(html)) {
                 let trHtml = trMatch[1]
-                let cardNameRegExp = /<a data-full-image=".*?" rel="popover" data-trigger="hover" data-html="true" href=".*?">(.*?)<\/a>/
-                let priceRegExp = /<\/a><\/td><td>.*?<\/td><td>.*?<\/td><td class='text-right'>(.*?)<\/td>/
+                let cardNameRegExp = new RegExp(`<a data-full-image=".*?" rel="popover" data-trigger="hover" data-html="true" href=".*?#${paper ? 'paper' : 'online'}">(.*?)<\/a>`)
+                let priceRegExp = new RegExp(`<a data-full-image=".*?" rel="popover" data-trigger="hover" data-html="true" href=".*?#${paper ? 'paper' : 'online'}">.*?<\/a><\/td><td>.*?<\/td><td>.*?<\/td><td class='text-right'>(.*?)<\/td>`)
                 if (trHtml.match(cardNameRegExp) != undefined && trHtml.match(priceRegExp)) {
                     let name = trHtml.match(cardNameRegExp)[1]
                     let price = trHtml.match(priceRegExp)[1]

@@ -26,7 +26,7 @@ MTGGoldfish.prototype.get = {
         return new Promise((resolve, reject) => {
             request(`/index/${code}${foil ? '_F' : ''}`, paper ? 'paper' : 'online')
             .then(response => {
-                parser.cards(response).then(cards => {
+                parser.cards(response, paper).then(cards => {
                     resolve(cards)
                 })
                 .catch(error => {
