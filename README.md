@@ -43,7 +43,7 @@ goldfish.get.cards('IKO').then(cards => {})
 Output is an array of card objects. Each object contains `name` (String) and `price` (Float)
 
 ```json
-[{name: 'Black Lotus', price: 28000}]
+[{"name": "Black Lotus", "price": 28000}]
 ```
 
 ## Version history
