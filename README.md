@@ -26,7 +26,7 @@ let sets = await goldfish.get.sets()
 Output is an array of objects. Each object in array contains set `name` (String) and `code` (String)
 
 ```json
-[{name: 'Alpha', code: 'LEA'}]
+[{"name": "Alpha", "code": "LEA"}]
 ```
 
 ### Cards
