@@ -35,6 +35,7 @@ Function accepts following parameters:
 
 * `code` (String) **required**: code of the required set
 * `paper` (Boolean): *true* by default, *false* will return online prices
+* `foil` (Boolean): *false* by default, *true* will return foil prices
 
 ```javascript
 goldfish.get.cards('IKO').then(cards => {})
@@ -50,5 +51,6 @@ Output is an array of card objects. Each object contains `name` (String) and `pr
 
 Version | Notes
 -|-
+0.0.4 | Foil prices
 0.0.3 | Parser improvements
 0.0.1 | Initial release

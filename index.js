@@ -24,7 +24,7 @@ MTGGoldfish.prototype.get = {
     cards: (code, paper = true, foil = false) => {
         if (code === undefined) throw new Error()
         return new Promise((resolve, reject) => {
-            request(`/index/${code}`, paper ? 'paper' : 'online')
+            request(`/index/${code}${foil ? '_F' : ''}`, paper ? 'paper' : 'online')
             .then(response => {
                 parser.cards(response).then(cards => {
                     resolve(cards)
