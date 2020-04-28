@@ -1,6 +1,6 @@
 {
   "name": "mtggoldfish-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MTGGoldfish scrapper for Node.js",
   "main": "index.js",
   "scripts": {
