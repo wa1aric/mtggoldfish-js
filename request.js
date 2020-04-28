@@ -3,7 +3,7 @@ const { get } = require('https')
 module.exports = (pathname, hash) => {
     let url = new URL('https://www.mtggoldfish.com')
     url.pathname = pathname
-    if (hash != undefined) url.hash = hash
+    url.hash = hash
     return new Promise((resolve, reject) => {
         get(url, callback => {
             let response
