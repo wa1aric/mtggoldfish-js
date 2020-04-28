@@ -1,0 +1,22 @@
+{
+  "name": "mtggoldfish-js",
+  "version": "0.0.1",
+  "description": "MTGGoldfish scrapper for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mtg",
+    "goldfish",
+    "price",
+    "scraper",
+    "json"
+  ],
+  "author": "Valery Stepanov <etonomick@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etonomick/mtggoldfish-js.git"
+  }
+}
