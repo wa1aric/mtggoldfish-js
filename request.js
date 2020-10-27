@@ -4,6 +4,7 @@ module.exports = (pathname, hash) => {
     let url = new URL('https://www.mtggoldfish.com')
     url.pathname = pathname
     url.hash = hash
+    console.log(url)
     return new Promise((resolve, reject) => {
         get(url, callback => {
             let response
